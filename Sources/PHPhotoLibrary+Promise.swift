@@ -17,6 +17,6 @@ extension PHPhotoLibrary {
      - Note: This promise cannot reject.
      */
     public class func requestAuthorization() -> Guarantee<PHAuthorizationStatus> {
-        return Guarantee(.pending) { PHPhotoLibrary.requestAuthorization($0) }
+        return Guarantee(resolver: PHPhotoLibrary.requestAuthorization)
     }
 }
